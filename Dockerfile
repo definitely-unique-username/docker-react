@@ -1,4 +1,4 @@
-FROM node:16-alpine AS builder
+FROM node:16-alpine
 USER node
 WORKDIR /home/node/app
 COPY --chown=node:node package.json .
@@ -8,4 +8,4 @@ RUN npm run build
 
 FROM nginx
 EXPOSE 80
-COPY --from=builder /home/node/app/build /usr/share/nginx/html
+COPY --from=0 /home/node/app/build /usr/share/nginx/html
