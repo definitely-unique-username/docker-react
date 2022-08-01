@@ -1,7 +1,7 @@
 # AWS Beanstalk doesn't support named builders
 # FROM node:16-alpine AS builder
 FROM node:16-alpine
-USER node
+# USER node
 # WORKDIR /home/node/app
 WORKDIR /app
 # COPY --chown=node:node package.json .
